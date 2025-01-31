@@ -1,42 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+session_start();
+if (empty($_SESSION['logged_in'])) {
+	header("Location:login.php");
+	exit;
+}
+$username = $_SESSION['username'];
+?>
+<htmL>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
+	<title>Διαχείριση Κλινικής</title>
+<link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is the homepage of my awesome website.</p>
-        </section>
-        
-        <section id="about">
-            <h2>About</h2>
-            <p>Here you can learn more about what I do.</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Get in touch with me through social media or email.</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
+
+<div class="nav" align="center">
+<a href="giatroi.php">Γιατροί</a>
+<a href="astheneis.php">Ασθενείς</a>
+<a href="rantevou.php">Ραντεβού</a>
+<a href="logout.php" class="logout-link"><div class="logoutb">Logout</div></a>
+<div class="menu-name"><a href="menu.php"><u>Διαχείριση Κλινικής</u></a></div>
+</div>
+<div class="footer">
+  <p>&copy;</p>
+</div>
+
 </body>
 </html>
